@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+    <div class="row">
+         <h3 class="center-align"><span class="new badge">{{ number_of_bookings }}</span>Bookings</h3>
+        <table class="col s8 centered striped">
+            <thead>
+            <tr>
+                <th><i class="fas fa-signature"></i>   <h5>Name</h5></th>
+                <th><i class="fas fa-calendar-minus"></i>   <h5>Date</h5></th>
+                <th><i class="far fa-clock"></i>  <h5>TIme</h5></th>
+                <th><i class="fas fa-cut"></i>  <h5>Category</h5></th>
+            </tr>
+            </thead>
+            {% for booking in bookings %}
+            <tbody>
+                <tr>
+                    <td><i class="fas fa-user">    {{ booking.created_by }}</i></td>
+                    <td><i class="fas fa-calendar-minus"></i>    {{ booking.date }}</td>
+                    <td><i class="far fa-clock"></i>    {{ booking.booking_timestamp }} </td>
+                    <td>{{ booking.name }}</td>
+                    <td>
+                        <a href="{{ url_for('delete_booking', booking_id=booking._id) }}" class="btn-small red accent-4">Delete</a>
+                        <a href="{{ url_for('edit_booking', booking_id=booking._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+                    </td>
+                </tr>
+            </tbody>
+            {% endfor %}
+      </table>
+      <div class="center-align">
+        <!-- Dropdown Trigger -->
+        <button class="dropdown-trigger btn" data-target="dropdown1"><i class="fas fa-users">Users</i></button>
+
+        <!-- Dropdown Structure -->
+        <ul id="dropdown1" class="dropdown-content">
+            {% for user in users %}
+            <li> {{ user.username }}</li>
+            <li class="divider" tabindex="-1"></li>
+            {% endfor %}    
+        </ul>
+      </div>
+
+    </div>
+{% endblock %}

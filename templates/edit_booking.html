@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "index.html" %}
+{% block content %}
+
+     <h3 class="light-blue-text text-darken-4 center-align">Edit booking</h3>
+
+    <div class="row">
+        <form class="col s6 m8 l4" method="POST" action="{{ url_for('edit_booking', booking_id=booking._id) }}">
+            <!-- booking description -->
+            <div class="row">
+                <div class="input-field">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="booking_description" name="booking_description" minlength="5"
+                        maxlength="200" class="materialize-textarea validate" required>
+                        {{- booking.booking_description -}}
+                    </textarea>
+                    <label for="booking_description">booking Description</label>
+                </div>
+            </div>
+
+			<div class="row">
+				<div class="input-field">
+                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+					<select id="name" name="name">
+                        <option value="" disabled>Choose Category</option>
+                        {% for category in categories %}
+                            {% if category.name == booking.name %}
+                                <option value="{{ category.name }}" selected>{{ category.name }}</option>
+                            {% else %}
+                                <option value="{{ category.name }}">{{ category.name }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+					<label for="name"> Category</label>
+				</div>
+			</div>
+            <!-- due date picker -->
+            <div class="row">
+                <div class="input-field">
+                    <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="booking_date" name="booking_date" type="text"
+                        value="{{ booking.date }}" class="datepicker validate" required>
+                    <label for="booking_date">Due Date</label>
+                </div>
+            </div>
+            <!-- due time picker -->
+            <div class="row">
+                <div class="input-field">
+                    <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="booking_timestamp" name="booking_timestamp" type="text"
+                        value="{{ booking.timestamp }}" class="timepicker validate" required>
+                    <label for="booking_timestamp">Time</label>
+                </div>
+            </div>
+            <!-- submit button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                        Edit Booking <i class="fas fa-edit right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+        <div class="col s6 m2 l8">
+            <div class="slider">
+                <ul class="slides">
+                    <li>
+                        <img src="https://browser-f85dacca-902d-495e-9699-928fa3003b80.ws-eu03.gitpod.io/workspace/python3/static/Images/3_big6-768x591.png"> 
+                        <div class="caption center-align">
+                            <h3>This is our big Tagline!</h3>
+                            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://browser-f85dacca-902d-495e-9699-928fa3003b80.ws-eu03.gitpod.io/workspace/python3/static/Images/881f0a4fbe6a6f03d45ccbf9ad9434cb.jpg">
+                        <div class="caption left-align">
+                            <h3>Left  Caption</h3>
+                            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+</html>

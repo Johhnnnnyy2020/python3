@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends "index.html" %}
+    {% block content %}
+    <h1>User: {{ username.username }}</h1>
+    <hr>
+    {% for booking in bookings %}
+    <p>
+    {{ booking.created_by.username }} says: <b>{{ booking.body }}</b>
+    </p>
+    {% endfor %}
+    {%  endblock %}  
+</html>
