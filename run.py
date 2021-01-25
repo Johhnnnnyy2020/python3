@@ -20,6 +20,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+<<<<<<< HEAD
 @app.route("/")
 @app.route("/bookings")
 def bookings():
@@ -147,6 +148,12 @@ def delete_booking(booking_id):
 
     if session["user"]:
         return render_template("profile.html", username=username)
+=======
+@app.route('/')
+@app.route('/get_movies')
+def get_movies():
+    return render_template("movies.html", movies=mongo.db.movies.find())
+>>>>>>> 95502713c994b284dbbc26e6cc656a1550e345db
 
 
 if __name__ == "__main__":
