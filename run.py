@@ -20,7 +20,6 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-<<<<<<< HEAD
 @app.route("/")
 @app.route("/bookings")
 def bookings():
@@ -110,7 +109,7 @@ def add_booking():
         booking = {
             "date": request.form.get("date"),
             "booking_description": request.form.get("description"),
-            "booking_timestamp": request.form.get("timestamp"),
+            "booking_timestamp": request.form.get("booking_timestamp"),
             "created_by": session["user"],
             "name": request.form.get("name")
         }
@@ -127,7 +126,7 @@ def edit_booking(booking_id):
         submit = {
             "date": request.form.get("date"),
             "booking_description": request.form.get("description"),
-            "booking_timestamp": request.form.get("timestamp"),
+            "booking_timestamp": request.form.get("booking_timestamp"),
             "created_by": session["user"],
             "name": request.form.get("name")
         }
@@ -148,12 +147,6 @@ def delete_booking(booking_id):
 
     if session["user"]:
         return render_template("profile.html", username=username)
-=======
-@app.route('/')
-@app.route('/get_movies')
-def get_movies():
-    return render_template("movies.html", movies=mongo.db.movies.find())
->>>>>>> 95502713c994b284dbbc26e6cc656a1550e345db
 
 
 if __name__ == "__main__":

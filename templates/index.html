@@ -10,40 +10,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {% block styles %}
     {% endblock %}
-    <title>Task Manager</title>
+    <title>Manager</title>
 </head>
 <body>
-<<<<<<< HEAD
-=======
-	<nav>
-		<div class="nav-wrapper">
-			<a href="#!" class="brand-logo">Logo</a>
-			<a href="#" data-target="mobile-demo" class="sidenav-trigger"></a>
-			<ul class="right hide-on-med-and-down">
-				<li><a href="{{ url_for('get_movies') }}">Movies</a></li>
-				<li><a href="badges.html">Components</a></li>
-				<li><a href="collapsible.html">Fun</a></li>
-			</ul>
-		</div>
-	</nav>
-
-	
-    <div class="row">
-      <div class="col s12"></div>
-      <div class="col s6"> {{ movies.title }}
-      <img src="{{movies.poster}}" alt="Profile image for {{movies.title}}" />
-      </div>
-      <div class="col s6">6-columns (one-half)</div>
-    </div>
->>>>>>> 95502713c994b284dbbc26e6cc656a1550e345db
 
 	<header>
         <!-- top navbar -->
-		<nav class="nav-extended text-shadow light-blue darken-1">
+		<nav class="nav-extended text-shadow black">
 			<div class="nav-wrapper">
                 {% if session.user|lower == "admin"|lower %}
                     <a href="{{ url_for('bookings') }}" class="brand-logo">
-                       <img src="https://browser-f85dacca-902d-495e-9699-928fa3003b80.ws-eu03.gitpod.io/workspace/python3/static/Images/881f0a4fbe6a6f03d45ccbf9ad9434cb.jpg" alt="" style="height: 70px;width: 70px;" >
+                       <h5>Hairzone</h5>
                     </a>
                 {% endif %}
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
@@ -65,7 +42,7 @@
 
         <!-- mobile sidenav -->
 		<ul class="sidenav" id="mobile-demo">
-            <li><h4 class="center-align light-blue-text text-darken 4">Booking Manager</h4></li>
+            <li><h4 class="center-align light-blue-text text-black">Booking Manager</h4></li>
             {% if session.user %}
                 <li><a href="{{ url_for('bookings') }}">Home</a></li>
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
@@ -98,6 +75,23 @@
         {% block content %}
         {% endblock %}
     </main>
+    <footer class="page-footer text-shadow black">
+          <div class="container text-shadow white">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="black-text">Footer Content</h5>
+                <p class="black-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="black-text">Links</h5>
+                <ul>
+                  <li><a class="black-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="black-text text-lighten-3" href="#!">Link 2</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
      <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>

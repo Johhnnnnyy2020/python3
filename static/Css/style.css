@@ -1,12 +1,19 @@
+*{
+    margin:0;
+    padding:0;
+}
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
 
 form {
     background-image: url("https://browser-f85dacca-902d-495e-9699-928fa3003b80.ws-eu03.gitpod.io/workspace/python3/static/Images/background-hairdresser-pr-salon-hair_1303-1315.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
-.fas {
-    margin: 5px;
-}
+
 .flashes {
     color:#f2f;
 	animation: flash linear 1s infinite;
@@ -21,15 +28,9 @@ form {
     animation: flash linear 1s infinite;
 }
 
-
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-    .nav {
-        width: 100%;
-    }
-    .container-fluid {
-        width: 100%;
-        height: 100%;
-    }
-
+.page-footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:150px;
 }

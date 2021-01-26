@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
 {% extends "index.html" %}
 {% block content %}
 
-     <h3 class="light-blue-text text-darken-4 center-align">Edit booking</h3>
-
+    <h3 class=" black-text text-shadow center-align">Edit Booking</h3>
     <div class="row">
-        <form class="col s6 m8 l4" method="POST" action="{{ url_for('edit_booking', booking_id=booking._id) }}">
+        <form class="col s12 m12 l6" method="POST" action="{{ url_for('edit_booking', booking_id=booking._id) }}">
             <!-- booking description -->
             <div class="row">
-                <div class="input-field">
-                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix black-text"></i>
                     <textarea id="booking_description" name="booking_description" minlength="5"
                         maxlength="200" class="materialize-textarea validate" required>
                         {{- booking.booking_description -}}
@@ -19,10 +18,9 @@
                     <label for="booking_description">booking Description</label>
                 </div>
             </div>
-
-			<div class="row">
-				<div class="input-field">
-                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+            <div class="row">
+				<div class="input-field col s12">
+                    <i class="fas fa-folder-open prefix black-text"></i>
 					<select id="name" name="name">
                         <option value="" disabled>Choose Category</option>
                         {% for category in categories %}
@@ -36,10 +34,10 @@
 					<label for="name"> Category</label>
 				</div>
 			</div>
-            <!-- due date picker -->
+             <!-- due date picker -->
             <div class="row">
-                <div class="input-field">
-                    <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-alt prefix black-text"></i>
                     <input id="booking_date" name="booking_date" type="text"
                         value="{{ booking.date }}" class="datepicker validate" required>
                     <label for="booking_date">Due Date</label>
@@ -47,8 +45,8 @@
             </div>
             <!-- due time picker -->
             <div class="row">
-                <div class="input-field">
-                    <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-alt prefix black-text"></i>
                     <input id="booking_timestamp" name="booking_timestamp" type="text"
                         value="{{ booking.timestamp }}" class="timepicker validate" required>
                     <label for="booking_timestamp">Time</label>
@@ -57,34 +55,33 @@
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                        Edit Booking <i class="fas fa-edit right"></i>
+                    <button type="submit" class="btn-small black-text text-shadow">
+                        Edit Booking <i class="fas fa-edit"></i>
                     </button>
                 </div>
             </div>
         </form>
-        <div class="col s6 m2 l8">
+        <div class="col s12 m12 l6">
             <div class="slider">
                 <ul class="slides">
                     <li>
-                        <img src="https://browser-f85dacca-902d-495e-9699-928fa3003b80.ws-eu03.gitpod.io/workspace/python3/static/Images/3_big6-768x591.png"> 
+                        <img src="https://browser-f85dacca-902d-495e-9699-928fa3003b80.ws-eu03.gitpod.io/workspace/python3/static/Images/0ac99edd158ee3e829bbe1008f87a155.jpg"> 
                         <div class="caption center-align">
-                            <h3>This is our big Tagline!</h3>
-                            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                            <h3 class="black-text blue-grey lighten-5">You can’t count your hair.</h3>
+                            <h5 class="black-text blue-grey lighten-5">Make Your Difference Clear. ...</h5>
                         </div>
                     </li>
                     <li>
-                        <img src="https://browser-f85dacca-902d-495e-9699-928fa3003b80.ws-eu03.gitpod.io/workspace/python3/static/Images/881f0a4fbe6a6f03d45ccbf9ad9434cb.jpg">
+                        <img src="https://browser-f85dacca-902d-495e-9699-928fa3003b80.ws-eu03.gitpod.io/workspace/python3/static/Images/db626755a07864b0a2a5cdc8c529830c.jpg">
                         <div class="caption left-align">
-                            <h3>Left  Caption</h3>
-                            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                            <h3 class="black-text blue-grey lighten-5">If there is a hair, the meat is ruined.</h3>
+                            <h5 class="black-text blue-grey lighten-5">We treat visitors like invited guests.</h5>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-
 
 {% endblock %}
 </html>

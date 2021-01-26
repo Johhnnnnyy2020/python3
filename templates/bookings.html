@@ -2,8 +2,9 @@
 {% extends 'index.html' %}
 {% block content %}
     <div class="row">
-         <h3 class="center-align"><span class="new badge">{{ number_of_bookings }}</span>Bookings</h3>
-        <table class="col s8 centered striped">
+         <h3 class="center-align">Bookings</h3>
+         <span class="new badge center-align">{{ number_of_bookings }}</span>
+        <table class="col s8 centered striped bookings">
             <thead>
             <tr>
                 <th><i class="fas fa-signature"></i>   <h5>Name</h5></th>
