@@ -20,13 +20,13 @@
 			<div class="nav-wrapper">
                 {% if session.user|lower == "admin"|lower %}
                     <a href="{{ url_for('bookings') }}" class="brand-logo">
-                       <h5>Hairzone</h5>
+                       <h5 class="teal-text">Hairzone</h5>
                     </a>
                 {% endif %}
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
                     {% if session.user %}
-                        <li><a href="{{ url_for('bookings') }}">Home</a></li>
+                        <li><a href="{{ url_for('bookings') }}">Home<span class="new badge">{{ number_of_bookings }}</span></a></li>
                         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                         <li><a href="{{ url_for('add_booking') }}">Book now</a></li>
                         {% if session.user|lower == "admin"|lower %}
@@ -79,14 +79,14 @@
           <div class="container text-shadow white">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="black-text">Footer Content</h5>
-                <p class="black-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <h5 class="teal-text">Footer Content</h5>
+                <p class="teal-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
               </div>
               <div class="col l4 offset-l2 s12">
                 <h5 class="black-text">Links</h5>
                 <ul>
-                  <li><a class="black-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="black-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="teal-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="teal-text text-lighten-3" href="#!">Link 2</a></li>
                 </ul>
               </div>
             </div>

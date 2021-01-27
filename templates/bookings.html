@@ -2,8 +2,7 @@
 {% extends 'index.html' %}
 {% block content %}
     <div class="row">
-         <h3 class="center-align">Bookings</h3>
-         <span class="new badge center-align">{{ number_of_bookings }}</span>
+        <h3 class="center-align">Bookings</h3>
         <table class="col s8 centered striped bookings">
             <thead>
             <tr>
@@ -17,18 +16,18 @@
             <tbody>
                 <tr>
                     <td><i class="fas fa-user">    {{ booking.created_by }}</i></td>
-                    <td><i class="fas fa-calendar-minus"></i>    {{ booking.date }}</td>
-                    <td><i class="far fa-clock"></i>    {{ booking.booking_timestamp }} </td>
+                    <td>{{ booking.date }}</td>
+                    <td>{{ booking.booking_timestamp }} </td>
                     <td>{{ booking.name }}</td>
                     <td>
                         <a href="{{ url_for('delete_booking', booking_id=booking._id) }}" class="btn-small red accent-4">Delete</a>
-                        <a href="{{ url_for('edit_booking', booking_id=booking._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+                        <a href="{{ url_for('edit_booking', booking_id=booking._id) }}" class="btn-small teal lighten-1">Edit</a>
                     </td>
                 </tr>
             </tbody>
             {% endfor %}
       </table>
-      <div class="center-align">
+      <div class="right-align">
         <!-- Dropdown Trigger -->
         <button class="dropdown-trigger btn" data-target="dropdown1"><i class="fas fa-users">Users</i></button>
 

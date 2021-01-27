@@ -16,7 +16,7 @@ form {
 
 .flashes {
     color:#f2f;
-	animation: flash linear 1s infinite;
+	animation: 5s flash linear 1s forwards;
 }
 @keyframes flash {
 	0% { opacity: 1; } 
@@ -32,5 +32,16 @@ form {
    position:absolute;
    bottom:0;
    width:100%;
-   height:150px;
+   height:120x;
+}
+table {
+    overflow: scroll;
+}
+@media only screen and (max-device-width: 480px) {
+    .slider {
+        height: 150px;
+    }
+    .slides {
+        height: 130px;
+    }
 }
