@@ -2,11 +2,6 @@
     margin:0;
     padding:0;
 }
-body {
-   margin:0;
-   padding:0;
-   height:100%;
-}
 
 form {
     background-image: url("https://browser-f85dacca-902d-495e-9699-928fa3003b80.ws-eu03.gitpod.io/workspace/python3/static/Images/background-hairdresser-pr-salon-hair_1303-1315.jpg");
@@ -16,7 +11,7 @@ form {
 
 .flashes {
     color:#f2f;
-	animation: 5s flash linear 1s forwards;
+	animation: flash linear 5s alternate-reverse;
 }
 @keyframes flash {
 	0% { opacity: 1; } 
@@ -25,7 +20,7 @@ form {
 }
 .brand-logo {
     margin: 5px;
-    animation: flash linear 1s infinite;
+    animation: flash linear 5s forwards;
 }
 
 .page-footer {
@@ -37,11 +32,8 @@ form {
 table {
     overflow: scroll;
 }
-@media only screen and (max-device-width: 480px) {
-    .slider {
-        height: 150px;
-    }
-    .slides {
-        height: 130px;
+ @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3) { 
+    .information {
+        visibility: hidden !important;
     }
 }

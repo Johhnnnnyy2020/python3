@@ -27,18 +27,5 @@
             </tbody>
             {% endfor %}
       </table>
-      <div class="right-align">
-        <!-- Dropdown Trigger -->
-        <button class="dropdown-trigger btn" data-target="dropdown1"><i class="fas fa-users">Users</i></button>
-
-        <!-- Dropdown Structure -->
-        <ul id="dropdown1" class="dropdown-content">
-            {% for user in users %}
-            <li> {{ user.username }}</li>
-            <li class="divider" tabindex="-1"></li>
-            {% endfor %}    
-        </ul>
-      </div>
-
     </div>
 {% endblock %}
